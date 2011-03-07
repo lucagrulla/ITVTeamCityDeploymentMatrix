@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TeamCityPipelinePlugin" default="deploy">
+
+    <property file="build.properties"/>
+    <property name="plugin.name" value="matrix"/>
+    <dirname property="module.server.basedir" file="${ant.file}"/>
+
+
+    <path id="library.teamcity_open_api_common.classpath">
+        <pathelement location="${path.variable.teamcitydistribution}/devPackage/common-api.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/devPackage/runtime-util.jar"/>
+    </path>
+
+    <path id="library.teamcity_open_api_server.classpath">
+        <pathelement location="${path.variable.teamcitydistribution}/devPackage/server-api.jar"/>
+    </path>
+
+    <path id="library.tomcat.classpath">
+        <pathelement location="${path.variable.teamcitydistribution}/lib/servlet-api.jar"/>
+    </path>
+
+    <path id="local.classpath">
+        <pathelement location="./lib/guava-r08.jar"/>
+    </path>
+
+    <path id="teamcity.internal.classpath">
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/server.jar"/>
+    </path>
+
+    <path id="library.teamcity_third-party.classpath">
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/annotations.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/jdom.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/openapi.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/spring.jar"/>
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/util.jar"/>
+
+        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/commons-lang.jar"/>
+    </path>
+
+    <property name="server.output.dir" value="${module.server.basedir}/out/production/matrix"/>
+    <property name="server.testoutput.dir" value="${module.server.basedir}/out/test/matrix"/>
+
+    <path id="server.module.classpath">
+        <path refid="library.teamcity_third-party.classpath"/>
+        <path refid="library.teamcity_open_api_common.classpath"/>
+        <path refid="library.teamcity_open_api_server.classpath"/>
+        <path refid="library.tomcat.classpath"/>
+        <path refid="local.classpath"/>
+        <path refid="teamcity.internal.classpath"/>
+    </path>
+
+    <path id="server.runtime.module.classpath">
+        <pathelement location="${server.output.dir}"/>
+        <pathelement location="${server.testoutput.dir}"/>
+        <path refid="library.teamcity_third-party.classpath"/>
+        <path refid="library.teamcity_open_api_common.classpath"/>
+        <path refid="library.teamcity_open_api_server.classpath"/>
+        <path refid="library.tomcat.classpath"/>
+    </path>
+
+    <patternset id="compiler.resources">
+        <include name="**/?*.properties"/>
+        <include name="**/?*.xml"/>
+        <include name="**/?*.gif"/>
+        <include name="**/?*.png"/>
+        <include name="**/?*.jpeg"/>
+        <include name="**/?*.jpg"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.dtd"/>
+        <include name="**/?*.tld"/>
+        <include name="**/?*.jsp"/>
+        <include name="**/?*.css"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.htm"/>
+        <include name="**/?*.ftl"/>
+        <include name="**/?*.ftl"/>
+    </patternset>
+
+    <path id="server.module.sourcepath">
+        <dirset dir="${module.server.basedir}">
+            <include name="resources"/>
+            <include name="src"/>
+        </dirset>
+    </path>
+
+    <target name="compile" description="Compile module server; production classes">
+        <mkdir dir="${server.output.dir}"/>
+        <javac destdir="${server.output.dir}" fork="true">
+            <classpath refid="server.module.classpath"/>
+            <src refid="server.module.sourcepath"/>
+            <!--<patternset refid="excluded.from.compilation.server"/>-->
+        </javac>
+
+        <copy todir="${server.output.dir}">
+            <fileset dir="${module.server.basedir}/resources">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.server.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="package" depends="compile">
+        <delete dir="./dist"/>
+        <mkdir dir="./dist/unpacked/jar"/>
+        <copy todir="./dist/unpacked/jar">
+            <fileset dir="${server.output.dir}"/>
+        </copy>
+        <jar basedir="./dist/unpacked/jar" file="./dist/unpacked/server/matrix.jar"/>
+        <delete dir="./dist/unpacked/jar"/>
+        <copy file="teamcity-plugin.xml" todir="./dist/unpacked"/>
+        <zip basedir="./dist/unpacked" file="./dist/matrix.zip"></zip>
+    </target>
+
+    <target name="deploy" depends="package,deploy-standalone">
+    </target>
+
+    <target name="deploy-standalone">
+        <antcall target="stop"/>
+        <delete dir="${user.home}/.BuildServer/plugins"/>
+        <mkdir dir="${user.home}/.BuildServer/plugins"/>
+        <copy file="./dist/matrix.zip" todir="${user.home}/.BuildServer/plugins"/>
+        <antcall target="start"/>
+    </target>
+
+    <target name="deploy-teamcity">
+        <antcall target="stop"/>
+        <copy file="matrix.zip" todir="${user.home}/.BuildServer/plugins"/>
+        <antcall target="start"/>
+    </target>
+
+    <macrodef name="service">
+        <attribute name="service"/>
+        <attribute name="action"/>
+        <sequential>
+            <exec executable="cmd.exe">
+                <arg line="/c net @{action} '@{service}'"/>
+            </exec>
+        </sequential>
+    </macrodef>
+
+    <target name="start">
+        <service action="start" service="TeamCity"/>
+    </target>
+    <target name="stop">
+        <service action="stop" service="TeamCity"/>
+    </target>
+
+
+</project>

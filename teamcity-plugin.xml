@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:shemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>matrix</name>
+    <display-name>matrix</display-name>
+    <version>0.1</version>
+    <description>Matrix</description>
+
+    <vendor>
+      <name>Charles and Luca LTD</name>
+      <url>http://enter.your.url.com</url>
+    </vendor>
+  </info>
+</teamcity-plugin>
