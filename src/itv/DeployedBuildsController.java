@@ -25,9 +25,32 @@ public class DeployedBuildsController extends BaseController {
         myWebManager = webManager;
     }
 
+    public void register()
+    {
+      myWebManager.registerController("/DeployedBuildProjects.html", this);
+    }
+
     @Override
     protected ModelAndView doHandle(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception
     {
         return null;
+    }
+
+    public List<SBuildType> GetDeploymentProjects()
+    {
+        List<SBuildType> deploymentProjects = new ArrayList<SBuildType>();
+
+        for (SProject project : myServer.getProjectManager().getProjects())
+        {
+            for(SBuildType buildType : project.getBuildTypes())
+            {
+                if(buildType.getArtifactDependencies().size() > 0)
+                {
+                    deploymentProjects.add(buildType);
+                }
+            }
+        }
+
+        return deploymentProjects;
     }
 }
