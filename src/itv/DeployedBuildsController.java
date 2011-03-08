@@ -1,32 +1,49 @@
 package itv;
 
+import com.intellij.util.enumeration.ArrayListEnumeration;
 import jetbrains.buildServer.controllers.BaseController;
 import jetbrains.buildServer.serverSide.SBuildServer;
+import jetbrains.buildServer.serverSide.SBuildType;
+import jetbrains.buildServer.serverSide.SFinishedBuild;
 import jetbrains.buildServer.web.openapi.WebControllerManager;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-
-public class DeployedBuildsController extends BaseController {
+public class DeployedBuildsController extends BaseController
+{
     private final WebControllerManager myWebManager;
 
-    public DeployedBuildsController(SBuildServer server, WebControllerManager webManager) {
+    public DeployedBuildsController(SBuildServer server, WebControllerManager webManager)
+    {
         super(server);
         myWebManager = webManager;
 
     }
 
-    public void register() {
+    public void register()
+    {
         myWebManager.registerController("/deployedBuildProjects.html", this);
     }
 
     @Override
-    protected ModelAndView doHandle(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
+    protected ModelAndView doHandle(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception
+    {
         HashMap<String, Object> model = new HashMap<String, Object>();
-        model.put("buildTypes", new DeployedBuildInformation(myServer).GetDeploymentBuildConfiguration());
+        List<SBuildType> buildTypes = new DeployedBuildInformation(myServer).GetBuildConfigurations();
+
+        List<List<String>> data = new ArrayList<List<String>>();
+        model.put("data", GetData());
+
         return new ModelAndView("/plugins/matrix/deployedBuildsView.jsp", model);
+    }
+
+    public List<List<String>> GetData()
+    {
+        return new DeployedBuildInformation(myServer).GetDeploymentInformation();
     }
 }
