@@ -8,7 +8,7 @@
         init-method="register">
         <property name="placeId" value="ALL_PAGES_FOOTER"/>
         <property name="pluginName" value="deployedBuilds"/>
-        <property name="includeUrl" value="/plugins/pipeline/deployedBuilds.jsp"/>
+        <property name="includeUrl" value="/plugins/matrix/deployedBuilds.jsp"/>
       </bean>
 
 </beans>

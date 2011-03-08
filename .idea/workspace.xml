@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4df102de-dc31-4f62-b1c3-082b189515c4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/buildServerResources/deployedBuilds.jsp" />
+      <change type="DELETED" beforePath="F:\projects\TeamCityDeploymentMatrix\test\src\itv\TestDeployedBuildsController.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml" afterPath="$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" afterPath="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/itv/TestDeployedBuildsController.java" afterPath="$PROJECT_DIR$/test/src/itv/TestDeployedBuildsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teamcity-plugin.xml" afterPath="$PROJECT_DIR$/teamcity-plugin.xml" />
     </list>
     <ignored path="TeamCityDeploymentMatrix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,6 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
@@ -63,91 +71,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestDeployedBuildInformation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="57" selection-start="2654" selection-end="2695" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeployedBuildInformation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildInformation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="32" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestDeployedBuildsController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/src/itv/TestDeployedBuildsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DeployedBuildsController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="79" selection-start="1273" selection-end="1273" vertical-scroll-proportion="0.7718121">
+            <state line="23" column="5" selection-start="750" selection-end="750" vertical-scroll-proportion="0.577548">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deployedBuildsView.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="7" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build-server-plugin-matrix.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="18" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamcity-plugin.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/unpacked/teamcity-plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="28" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamcity-plugin.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -168,17 +98,21 @@
       <list>
         <option value="$PROJECT_DIR$/build.properties" />
         <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/teamcity-plugin.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/test/src/TestDeployedBuildsController.java" />
         <option value="$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java" />
         <option value="$PROJECT_DIR$/src/itv/DeployedBuildInformation.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml" />
         <option value="$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp" />
+        <option value="$PROJECT_DIR$/teamcity-plugin.xml" />
+        <option value="$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml" />
+        <option value="$PROJECT_DIR$/resources/buildServerResources/deployedBuilds.jsp" />
         <option value="$PROJECT_DIR$/test/src/itv/TestDeployedBuildsController.java" />
         <option value="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="MavenRunner">
     <option name="jreName" value="#JAVA_INTERNAL" />
@@ -304,20 +238,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="buildServerResources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TeamCityDeploymentMatrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TeamCityDeploymentMatrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,17 +528,17 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.05775401" sideWeight="0.5751121" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16631016" sideWeight="0.7914798" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39910313" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20852017" sideWeight="0.9991228" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20852017" sideWeight="0.9991228" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16791444" sideWeight="0.72309417" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.72309417" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.72309417" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16791444" sideWeight="0.7914798" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27690583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27690583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -670,37 +590,9 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.8.jar!/org/junit/runner/JUnitCore.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCityDeploymentMatrix.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/server-api.jar!/jetbrains/buildServer/serverSide/artifacts/SArtifactDependency.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="184" selection-end="184" vertical-scroll-proportion="-3.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/server-api.jar!/jetbrains/buildServer/web/openapi/WebControllerManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="-3.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="28" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -712,9 +604,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+    <entry file="jar://$TeamCityDistribution$/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/ModelAndView.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+        <state line="11" column="28" selection-start="359" selection-end="359" vertical-scroll-proportion="0.29588607">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.8.jar!/junit/framework/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="23" selection-start="910" selection-end="910" vertical-scroll-proportion="0.34676006">
           <folding />
         </state>
       </provider>
@@ -726,64 +625,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java">
+    <entry file="file://$PROJECT_DIR$/TeamCityDeploymentMatrix.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="57" selection-start="2654" selection-end="2695" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="13" column="0" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuilds.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="41" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="48" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="22" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+        <state line="4" column="38" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$TeamCityDistribution$/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/ModelAndView.class">
+    <entry file="file://$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="28" selection-start="359" selection-end="359" vertical-scroll-proportion="0.29588607">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="7" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="78" column="41" selection-start="3268" selection-end="3268" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="32" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
+        <state line="13" column="47" selection-start="356" selection-end="386" vertical-scroll-proportion="0.3264402">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.8.jar!/junit/framework/Assert.class">
+    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="910" selection-end="910" vertical-scroll-proportion="0.34676006">
+        <state line="34" column="7" selection-start="906" selection-end="906" vertical-scroll-proportion="0.8537666">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/itv/TestDeployedBuildsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="79" selection-start="1273" selection-end="1273" vertical-scroll-proportion="0.7718121">
+        <state line="23" column="5" selection-start="750" selection-end="750" vertical-scroll-proportion="0.577548">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

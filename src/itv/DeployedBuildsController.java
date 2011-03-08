@@ -11,24 +11,22 @@ import java.util.HashMap;
 
 
 public class DeployedBuildsController extends BaseController {
-
     private final WebControllerManager myWebManager;
-    private DeployedBuildInformation myBuildInformation;
 
-    public DeployedBuildsController(SBuildServer server, WebControllerManager webManager, DeployedBuildInformation buildInformation) {
+    public DeployedBuildsController(SBuildServer server, WebControllerManager webManager) {
         super(server);
         myWebManager = webManager;
-        myBuildInformation = buildInformation;
+
     }
 
     public void register() {
-        myWebManager.registerController("/DeployedBuildProjects.html", this);
+        myWebManager.registerController("/deployedBuildProjects.html", this);
     }
 
     @Override
     protected ModelAndView doHandle(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
         HashMap<String, Object> model = new HashMap<String, Object>();
-       model.put("buildTypes", myBuildInformation.GetDeploymentBuildConfiguration());
+        model.put("buildTypes", new DeployedBuildInformation(myServer).GetDeploymentBuildConfiguration());
         return new ModelAndView("/plugins/matrix/deployedBuildsView.jsp", model);
     }
 }
