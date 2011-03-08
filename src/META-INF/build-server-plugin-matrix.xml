@@ -4,8 +4,7 @@
 <beans default-autowire="constructor">
 
     <bean id="deployedBuildsController" class="itv.DeployedBuildsController" init-method="register"/>
-      <bean id="deployedBuildsLink"
-        class="jetbrains.buildServer.web.openapi.SimplePageExtension"
+      <bean id="deployedBuildsLink" class="jetbrains.buildServer.web.openapi.SimplePageExtension"
         init-method="register">
         <property name="placeId" value="ALL_PAGES_FOOTER"/>
         <property name="pluginName" value="deployedBuilds"/>
