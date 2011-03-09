@@ -13,15 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DeployedBuildsController extends BaseController {
-    private final WebControllerManager myWebManager;
 
     public DeployedBuildsController(SBuildServer server, WebControllerManager webManager) {
         super(server);
-        myWebManager = webManager;
-    }
-
-    public void register() {
-        myWebManager.registerController("/deployedBuildProjects.html", this);
+        webManager.registerController("/deployedBuildProjects.html", this);
     }
 
     @Override

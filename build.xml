@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="TeamCityPipelinePlugin" default="deploy">
+<project name="TeamCityPipelinePlugin" default="compile">
 
     <property name="lib" location="./lib"/>
 
@@ -62,7 +62,7 @@
         <copy todir="./dist/unpacked/jar">
             <fileset dir="${server.output.dir}"/>
         </copy>
-        <jar basedir="./dist/unpacked/jar" file="./dist/unpacked/server/matrix.jar"/>
+        <jar basedir="./dist/unpacked/jar" file="./dist/unpacked/matrix.jar"/>
         <delete dir="./dist/unpacked/jar"/>
         <copy file="teamcity-plugin.xml" todir="./dist/unpacked"/>
         <zip basedir="./dist/unpacked" file="./dist/matrix.zip"></zip>
