@@ -23,4 +23,8 @@ public class SuccessfulBuild {
     public String getFinishDate() {
         return finishedBuild.getFinishDate().toString();
     }
+
+    public String getBuildName() {
+        return finishedBuild.getFullName();
+    }
 }

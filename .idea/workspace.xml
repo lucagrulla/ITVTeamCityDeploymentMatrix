@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="4df102de-dc31-4f62-b1c3-082b189515c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/itv/TargetEnvironment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/buildServerResources/matrix.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/itv/SuccessfulBuild.java" afterPath="$PROJECT_DIR$/src/itv/SuccessfulBuild.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/buildServerResources/matrix.css" afterPath="$PROJECT_DIR$/resources/buildServerResources/matrix.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/buildServerResources/deployedBuilds.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/itv/DeployedBuildInformation.java" afterPath="$PROJECT_DIR$/src/itv/DeployedBuildInformation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/itv/SuccessfulBuild.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp" afterPath="$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java" afterPath="$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" afterPath="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/itv/EnvironmentData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/itv/EnvironmentData.java" afterPath="$PROJECT_DIR$/src/itv/EnvironmentData.java" />
     </list>
     <ignored path="$USER_HOME_GRIFFON$/" />
     <ignored path="$USER_HOME_GRAILS$/" />
@@ -97,7 +96,16 @@
       <file leaf-file-name="deployedBuildsView.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="25" selection-start="805" selection-end="805" vertical-scroll-proportion="0.58096826">
+            <state line="5" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.103626944">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="matrix.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/buildServerResources/matrix.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="1" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,7 +114,7 @@
       <file leaf-file-name="DeployedBuildInformation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="75" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
+            <state line="19" column="34" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,7 +125,7 @@
       <file leaf-file-name="EnvironmentData.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/itv/EnvironmentData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="14" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+            <state line="26" column="26" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,8 +134,10 @@
       <file leaf-file-name="SuccessfulBuild.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/itv/SuccessfulBuild.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="55" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="27" column="0" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,14 +163,14 @@
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml" />
         <option value="$PROJECT_DIR$/test/src/itv/TestDeployedBuildInformation.java" />
-        <option value="$PROJECT_DIR$/resources/buildServerResources/matrix.css" />
         <option value="$PROJECT_DIR$/src/itv/DeployedBuildsController.java" />
         <option value="$PROJECT_DIR$/src/itv/Environment.java" />
         <option value="$PROJECT_DIR$/src/itv/TargetEnvironment.java" />
         <option value="$PROJECT_DIR$/src/itv/SuccesfullBuild.java" />
         <option value="$PROJECT_DIR$/src/itv/DeployedBuildInformation.java" />
-        <option value="$PROJECT_DIR$/src/itv/SuccessfulBuild.java" />
         <option value="$PROJECT_DIR$/src/itv/EnvironmentData.java" />
+        <option value="$PROJECT_DIR$/src/itv/SuccessfulBuild.java" />
+        <option value="$PROJECT_DIR$/resources/buildServerResources/matrix.css" />
         <option value="$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp" />
       </list>
     </option>
@@ -657,7 +667,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -665,7 +675,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26666668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17307693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18589744" sideWeight="0.9991228" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18589744" sideWeight="0.9991228" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.6692825" order="2" side_tool="false" content_ui="tabs" />
@@ -755,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuilds.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="41" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/build-server-plugin-matrix.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="38" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
@@ -775,13 +778,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/matrix.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,30 +806,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/itv/DeployedBuildInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="75" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
+        <state line="19" column="34" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itv/SuccessfulBuild.java">
+    <entry file="file://$PROJECT_DIR$/src/itv/EnvironmentData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="55" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
+        <state line="26" column="26" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itv/EnvironmentData.java">
+    <entry file="file://$PROJECT_DIR$/src/itv/SuccessfulBuild.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/buildServerResources/matrix.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="1" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/buildServerResources/deployedBuildsView.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="805" selection-end="805" vertical-scroll-proportion="0.58096826">
+        <state line="5" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.103626944">
           <folding />
         </state>
       </provider>

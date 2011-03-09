@@ -1,31 +1,30 @@
-table.deployments {
-	border:1px solid;
-	padding:5px;
-	width:60%;
-	border-radius: 15px;
-}
-
-td, th{
-	border:1px solid #000;
-		border-collapse:collapse;
-		padding:5px;
-}
-
 .env {
 		border-radius: 15px;
 			border:1px solid;
 			width:30%;
-			font-weight:bold;
-			background-color:blue;
+			background-color:orange;
+			float:left;
+			margin-left:30px;
+			margin-bottom:30px;
+			box-shadow:10px 10px 20px #000;
 }
+
 .env-description {
+    font-weight:bold;
+	font-size:30px;
 	text-align:center;
+}
+
+.finish-date {
+    text-align:center;
+}
+
+.build-name {
+    font-size: 20px;
+    text-align:center;
 }
 
 .build{
 	text-align:center;
-}
-
-.branch{
-	text-align:center;
+	font-weight:bold;
 }

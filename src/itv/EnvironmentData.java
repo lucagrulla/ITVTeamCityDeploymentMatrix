@@ -19,7 +19,11 @@ public class EnvironmentData {
         return build.getBuildNumber();
     }
 
-      public String getFinishDate() {
-          return build.getFinishDate();
+    public String getFinishDate() {
+        return build.getFinishDate();
+    }
+
+    public String getBuildName() {
+        return build.getBuildName();
     }
 }
