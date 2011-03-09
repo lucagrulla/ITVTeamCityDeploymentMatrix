@@ -12,7 +12,7 @@
               <p class="env-description">${env.key}<p>
               <p class="build-name">${env.value.buildName}<p>
               <p class="build">Build: ${env.value.buildNumber}</p>
-              <p class="finish-date">build finished:${env.value.finishDate}</p>
+              <p class="finish-date">the deployed build is from:${env.value.finishDate}</p>
             </div>
          </c:forEach>
     </body>
