@@ -1,6 +1,5 @@
 package itv;
 
-import com.google.common.collect.Lists;
 import jetbrains.buildServer.serverSide.*;
 import jetbrains.buildServer.serverSide.artifacts.SArtifactDependency;
 
@@ -13,11 +12,13 @@ public class DeployedBuildInformation {
 
     public DeployedBuildInformation(SBuildServer server) {
         this.server = server;
-        tags = Lists.newArrayList("rc1", "rc2", "rc3");
+        tags = new ArrayList<String>();
+        tags.add("rc1");
+        tags.add("rc2");
+        tags.add("rc3");
     }
 
-    public List<SBuildType> GetDeploymentBuildConfigurations()
-    {
+    public List<SBuildType> GetDeploymentBuildConfigurations() {
         List<SBuildType> deploymentBuildConfigurations = new ArrayList<SBuildType>();
 
         ProjectManager projectManager = server.getProjectManager();
@@ -35,20 +36,16 @@ public class DeployedBuildInformation {
         return deploymentBuildConfigurations;
     }
 
-    public List<SBuildType> GetBuildConfigurations()
-    {
+    public List<SBuildType> GetBuildConfigurations() {
         List<SBuildType> buildConfigurations = new ArrayList<SBuildType>();
 
-        for(SBuildType deploymentBuildType: GetDeploymentBuildConfigurations())
-        {
+        for (SBuildType deploymentBuildType : GetDeploymentBuildConfigurations()) {
             List<SArtifactDependency> artifactDependencies = deploymentBuildType.getArtifactDependencies();
 
-            for(SArtifactDependency artifactDependency : artifactDependencies)
-            {
+            for (SArtifactDependency artifactDependency : artifactDependencies) {
                 SBuildType buildConfiguration = server.getProjectManager().findBuildTypeById(artifactDependency.getSourceBuildTypeId());
 
-                if(!buildConfigurations.contains(buildConfiguration))
-                {
+                if (!buildConfigurations.contains(buildConfiguration)) {
                     buildConfigurations.add(buildConfiguration);
                 }
             }
@@ -57,45 +54,35 @@ public class DeployedBuildInformation {
         return buildConfigurations;
     }
 
-    public List<List<String>> GetDeploymentInformation()
-    {
+    public List<List<String>> GetDeploymentInformation() {
         List<List<String>> deploymentMatrix = new ArrayList<List<String>>();
 
         AddDeploymentMatrixHeader(deploymentMatrix);
 
         List<SBuildType> buildConfigurations = GetBuildConfigurations();
 
-        for(SBuildType buildConfiguration : buildConfigurations)
-        {
+        for (SBuildType buildConfiguration : buildConfigurations) {
             List<Long> timeStamps = new ArrayList<Long>();
-            for(int i = 0; i < tags.size(); ++i)
-            {
+            for (int i = 0; i < tags.size(); ++i) {
                 timeStamps.add(Long.MIN_VALUE);
             }
 
             List<String> deploymentInfo = new ArrayList<String>();
 
-            for(SFinishedBuild finishedBuild : buildConfiguration.getHistory())
-            {
+            for (SFinishedBuild finishedBuild : buildConfiguration.getHistory()) {
                 List<String> buildTags = finishedBuild.getTags();
 
-                if(buildTags.size() > 0)
-                {
-                    if(!deploymentInfo.contains(finishedBuild.getFullName()))
-                    {
+                if (buildTags.size() > 0) {
+                    if (!deploymentInfo.contains(finishedBuild.getFullName())) {
                         deploymentInfo.add(finishedBuild.getFullName());
-                        for(int i = 0; i < tags.size(); ++i)
-                        {
+                        for (int i = 0; i < tags.size(); ++i) {
                             deploymentInfo.add("");
                         }
                     }
 
-                    for(int i = 0; i < tags.size(); ++i)
-                    {
-                        if(buildTags.contains(tags.get(i)))
-                        {
-                            if(timeStamps.get(i) < finishedBuild.getFinishDate().getTime())
-                            {
+                    for (int i = 0; i < tags.size(); ++i) {
+                        if (buildTags.contains(tags.get(i))) {
+                            if (timeStamps.get(i) < finishedBuild.getFinishDate().getTime()) {
                                 timeStamps.set(i, finishedBuild.getFinishDate().getTime());
                                 deploymentInfo.set(i + 1, finishedBuild.getBuildNumber());
                             }
@@ -104,8 +91,7 @@ public class DeployedBuildInformation {
                 }
             }
 
-            if(deploymentInfo.size() > 0)
-            {
+            if (deploymentInfo.size() > 0) {
                 deploymentMatrix.add(deploymentInfo);
             }
         }
@@ -113,9 +99,9 @@ public class DeployedBuildInformation {
         return deploymentMatrix;
     }
 
-    private void AddDeploymentMatrixHeader(List<List<String>> deploymentMatrix)
-    {
-        List<String> matrixHeader = Lists.newArrayList("Project \\ Environment");
+    private void AddDeploymentMatrixHeader(List<List<String>> deploymentMatrix) {
+        List<String> matrixHeader = new ArrayList<String>();
+        matrixHeader.add("Project \\ Environment");
         matrixHeader.addAll(tags);
 
         deploymentMatrix.add(matrixHeader);

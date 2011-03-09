@@ -1,63 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="TeamCityPipelinePlugin" default="deploy">
 
-    <property file="build.properties"/>
-    <property name="plugin.name" value="matrix"/>
+    <property name="lib" location="./lib"/>
+
     <dirname property="module.server.basedir" file="${ant.file}"/>
-
-
-    <path id="library.teamcity_open_api_common.classpath">
-        <pathelement location="${path.variable.teamcitydistribution}/devPackage/common-api.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/devPackage/runtime-util.jar"/>
-    </path>
-
-    <path id="library.teamcity_open_api_server.classpath">
-        <pathelement location="${path.variable.teamcitydistribution}/devPackage/server-api.jar"/>
-    </path>
-
-    <path id="library.tomcat.classpath">
-        <pathelement location="${path.variable.teamcitydistribution}/lib/servlet-api.jar"/>
-    </path>
-
-    <path id="local.classpath">
-        <pathelement location="./lib/guava-r08.jar"/>
-    </path>
-
-    <path id="teamcity.internal.classpath">
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/server.jar"/>
-    </path>
-
-    <path id="library.teamcity_third-party.classpath">
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/annotations.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/jdom.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/openapi.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/spring.jar"/>
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/util.jar"/>
-
-        <pathelement location="${path.variable.teamcitydistribution}/webapps/ROOT/WEB-INF/lib/commons-lang.jar"/>
-    </path>
 
     <property name="server.output.dir" value="${module.server.basedir}/out/production/matrix"/>
     <property name="server.testoutput.dir" value="${module.server.basedir}/out/test/matrix"/>
-
-    <path id="server.module.classpath">
-        <path refid="library.teamcity_third-party.classpath"/>
-        <path refid="library.teamcity_open_api_common.classpath"/>
-        <path refid="library.teamcity_open_api_server.classpath"/>
-        <path refid="library.tomcat.classpath"/>
-        <path refid="local.classpath"/>
-        <path refid="teamcity.internal.classpath"/>
-    </path>
-
-    <path id="server.runtime.module.classpath">
-        <pathelement location="${server.output.dir}"/>
-        <pathelement location="${server.testoutput.dir}"/>
-        <path refid="library.teamcity_third-party.classpath"/>
-        <path refid="library.teamcity_open_api_common.classpath"/>
-        <path refid="library.teamcity_open_api_server.classpath"/>
-        <path refid="library.tomcat.classpath"/>
-    </path>
 
     <patternset id="compiler.resources">
         <include name="**/?*.properties"/>
@@ -84,12 +33,15 @@
         </dirset>
     </path>
 
+    <path id="build.classpath">
+        <fileset dir="${lib}" includes="*.jar"/>
+	</path>
+
     <target name="compile" description="Compile module server; production classes">
         <mkdir dir="${server.output.dir}"/>
         <javac destdir="${server.output.dir}" fork="true">
-            <classpath refid="server.module.classpath"/>
+            <classpath refid="build.classpath"/>
             <src refid="server.module.sourcepath"/>
-            <!--<patternset refid="excluded.from.compilation.server"/>-->
         </javac>
 
         <copy todir="${server.output.dir}">
@@ -146,9 +98,8 @@
     <target name="start">
         <service action="start" service="TeamCity"/>
     </target>
+
     <target name="stop">
         <service action="stop" service="TeamCity"/>
     </target>
-
-
 </project>

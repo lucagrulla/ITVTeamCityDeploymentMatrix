@@ -1,16 +1,13 @@
 package itv;
 
-import com.google.common.collect.Lists;
 import jetbrains.buildServer.serverSide.*;
 import jetbrains.buildServer.serverSide.artifacts.SArtifactDependency;
 import junit.framework.Assert;
-import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import static org.mockito.Matchers.anyString;
@@ -63,8 +60,7 @@ public class TestDeployedBuildInformation {
     }
 
     @Test
-    public void ShouldGetAllBuildConfigurationsWhichDoNotHaveConfigurationsDependant()
-    {
+    public void ShouldGetAllBuildConfigurationsWhichDoNotHaveConfigurationsDependant() {
         List<SProject> projects = new ArrayList<SProject>();
         projects.add(CreateProjectWithArtifactDependency());
 
@@ -81,8 +77,7 @@ public class TestDeployedBuildInformation {
     }
 
     @Test
-    public void ShouldGetTheDeploymentInformation()
-    {
+    public void ShouldGetTheDeploymentInformation() {
         List<SProject> projects = new ArrayList<SProject>();
         projects.add(CreateProjectWithArtifactDependency());
 
@@ -91,7 +86,9 @@ public class TestDeployedBuildInformation {
         stub(projectManager.getProjects()).toReturn(projects);
         stub(projectManager.findBuildTypeById(anyString())).toReturn(buildConfiguration);
 
-        List<String> tags = Lists.newArrayList("rc2", "rc1");
+        List<String> tags = new ArrayList<String>();
+        tags.add("rc2");
+        tags.add("rc1");
 
         SFinishedBuild finishedBuild = mock(SFinishedBuild.class);
         stub(finishedBuild.getTags()).toReturn(tags);
@@ -117,7 +114,10 @@ public class TestDeployedBuildInformation {
         stub(anotherFinishedBuild.getBuildNumber()).toReturn("1");
         stub(anotherFinishedBuild.getFullName()).toReturn("DeployedBuild");
 
-        List<SFinishedBuild> finishedBuilds = Lists.newArrayList(oldFinishedBuild, finishedBuild, anotherFinishedBuild);
+        List<SFinishedBuild> finishedBuilds = new ArrayList<SFinishedBuild>();
+        finishedBuilds.add(oldFinishedBuild);
+        finishedBuilds.add(finishedBuild);
+        finishedBuilds.add(anotherFinishedBuild);
 
         stub(buildConfiguration.getHistory()).toReturn(finishedBuilds);
         DeployedBuildInformation buildInformation = new DeployedBuildInformation(server);
@@ -126,7 +126,11 @@ public class TestDeployedBuildInformation {
         Assert.assertEquals(2, deploymentMatrix.size());
 
         List<String> deploymentInfo = deploymentMatrix.get(1);
-        List<String> expectedRow = Lists.newArrayList("DeployedBuild", "54", "54", "");
+        List<String> expectedRow = new ArrayList<String>();
+        expectedRow.add("DeployedBuild");
+        expectedRow.add("54");
+        expectedRow.add("54");
+        expectedRow.add("");
 
         Assert.assertEquals(expectedRow, deploymentInfo);
     }
