@@ -36,8 +36,8 @@ public class DeployedBuildInformation {
         for (SBuildType deploymentBuild : GetDeploymentBuilds()) {
 
             for (SArtifactDependency artifactDependency : deploymentBuild.getArtifactDependencies()) {
-                SBuildType buildConfiguration = server.getProjectManager()
-                                                        .findBuildTypeById(artifactDependency.getSourceBuildTypeId());
+                final String buildTypeId = artifactDependency.getSourceBuildTypeId();
+                SBuildType buildConfiguration = server.getProjectManager().findBuildTypeById(buildTypeId);
                  buildConfigurations.add(buildConfiguration);
             }
         }
