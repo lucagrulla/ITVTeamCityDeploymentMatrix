@@ -4,21 +4,24 @@ import jetbrains.buildServer.serverSide.*;
 import jetbrains.buildServer.serverSide.artifacts.SArtifactDependency;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DeployedBuildInformation {
     private SBuildServer server;
-    public final List<String> tags;
+    public final List<String> knownEnvironments;
 
     public DeployedBuildInformation(SBuildServer server) {
         this.server = server;
-        tags = new ArrayList<String>();
-        tags.add("rc1");
-        tags.add("rc2");
-        tags.add("rc3");
+        knownEnvironments = new ArrayList<String>();
+        knownEnvironments.add("rc1");
+        knownEnvironments.add("rc2");
+        knownEnvironments.add("rc3");
     }
 
-    public List<SBuildType> GetDeploymentBuildConfigurations() {
+    //TODO: Refactor 
+    private List<SBuildType> GetDeploymentBuildConfigurations() {
         List<SBuildType> deploymentBuildConfigurations = new ArrayList<SBuildType>();
 
         ProjectManager projectManager = server.getProjectManager();
@@ -35,8 +38,8 @@ public class DeployedBuildInformation {
 
         return deploymentBuildConfigurations;
     }
-
-    public List<SBuildType> GetBuildConfigurations() {
+      //TODO: Refactor
+    private List<SBuildType> GetBuildConfigurations() {
         List<SBuildType> buildConfigurations = new ArrayList<SBuildType>();
 
         for (SBuildType deploymentBuildType : GetDeploymentBuildConfigurations()) {
@@ -54,56 +57,24 @@ public class DeployedBuildInformation {
         return buildConfigurations;
     }
 
-    public List<List<String>> GetDeploymentInformation() {
-        List<List<String>> deploymentMatrix = new ArrayList<List<String>>();
+    public Map<String, EnvironmentData> GetDeploymentInformation() {
 
-        AddDeploymentMatrixHeader(deploymentMatrix);
-
-        List<SBuildType> buildConfigurations = GetBuildConfigurations();
-
-        for (SBuildType buildConfiguration : buildConfigurations) {
-            List<Long> timeStamps = new ArrayList<Long>();
-            for (int i = 0; i < tags.size(); ++i) {
-                timeStamps.add(Long.MIN_VALUE);
-            }
-
-            List<String> deploymentInfo = new ArrayList<String>();
+        Map environmentsBlob = new HashMap<String, EnvironmentData>();
+        for (SBuildType buildConfiguration : GetBuildConfigurations()) {
 
             for (SFinishedBuild finishedBuild : buildConfiguration.getHistory()) {
-                List<String> buildTags = finishedBuild.getTags();
 
-                if (buildTags.size() > 0) {
-                    if (!deploymentInfo.contains(finishedBuild.getFullName())) {
-                        deploymentInfo.add(finishedBuild.getFullName());
-                        for (int i = 0; i < tags.size(); ++i) {
-                            deploymentInfo.add("");
-                        }
-                    }
+                final SuccessfulBuild build = new SuccessfulBuild(finishedBuild);
 
-                    for (int i = 0; i < tags.size(); ++i) {
-                        if (buildTags.contains(tags.get(i))) {
-                            if (timeStamps.get(i) < finishedBuild.getFinishDate().getTime()) {
-                                timeStamps.set(i, finishedBuild.getFinishDate().getTime());
-                                deploymentInfo.set(i + 1, finishedBuild.getBuildNumber());
-                            }
-                        }
+                for (String env: knownEnvironments) {
+                    if (build.hasBeenDeployedTo(env)) {
+                        environmentsBlob.put(env, new EnvironmentData(env, build));
                     }
                 }
             }
-
-            if (deploymentInfo.size() > 0) {
-                deploymentMatrix.add(deploymentInfo);
-            }
         }
 
-        return deploymentMatrix;
+         return environmentsBlob;
     }
 
-    private void AddDeploymentMatrixHeader(List<List<String>> deploymentMatrix) {
-        List<String> matrixHeader = new ArrayList<String>();
-        matrixHeader.add("Project \\ Environment");
-        matrixHeader.addAll(tags);
-
-        deploymentMatrix.add(matrixHeader);
-    }
 }

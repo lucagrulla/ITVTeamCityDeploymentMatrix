@@ -1,0 +1,31 @@
+table.deployments {
+	border:1px solid;
+	padding:5px;
+	width:60%;
+	border-radius: 15px;
+}
+
+td, th{
+	border:1px solid #000;
+		border-collapse:collapse;
+		padding:5px;
+}
+
+.env {
+		border-radius: 15px;
+			border:1px solid;
+			width:30%;
+			font-weight:bold;
+			background-color:blue;
+}
+.env-description {
+	text-align:center;
+}
+
+.build{
+	text-align:center;
+}
+
+.branch{
+	text-align:center;
+}
