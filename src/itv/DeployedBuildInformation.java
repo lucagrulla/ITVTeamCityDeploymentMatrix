@@ -1,10 +1,7 @@
 package itv;
 
 import com.google.common.collect.Lists;
-import jetbrains.buildServer.serverSide.SBuildServer;
-import jetbrains.buildServer.serverSide.SBuildType;
-import jetbrains.buildServer.serverSide.SFinishedBuild;
-import jetbrains.buildServer.serverSide.SProject;
+import jetbrains.buildServer.serverSide.*;
 import jetbrains.buildServer.serverSide.artifacts.SArtifactDependency;
 
 import java.util.ArrayList;
@@ -19,10 +16,15 @@ public class DeployedBuildInformation {
         tags = Lists.newArrayList("rc1", "rc2", "rc3");
     }
 
-    public List<SBuildType> GetDeploymentBuildConfigurations() {
+    public List<SBuildType> GetDeploymentBuildConfigurations()
+    {
         List<SBuildType> deploymentBuildConfigurations = new ArrayList<SBuildType>();
 
-        for (SProject project : server.getProjectManager().getProjects()) {
+        ProjectManager projectManager = server.getProjectManager();
+
+        List<SProject> projects = projectManager.getProjects();
+
+        for (SProject project : projects) {
             for (SBuildType buildConfiguration : project.getBuildTypes()) {
                 if (buildConfiguration.getArtifactDependencies().size() > 0) {
                     deploymentBuildConfigurations.add(buildConfiguration);
