@@ -3,4 +3,5 @@
 
 <beans default-autowire="constructor">
     <bean id="deployedBuildsController" class="itv.DeployedBuildsController"/>
+    <bean id="changesetController" class="itv.ChangeSetController"/>
 </beans>

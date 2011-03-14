@@ -26,4 +26,8 @@ public class EnvironmentData {
     public String getBuildName() {
         return build.getBuildName();
     }
+
+    public String getBuildId() {
+        return build.getBuildId();
+    }
 }

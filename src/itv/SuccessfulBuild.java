@@ -27,4 +27,8 @@ public class SuccessfulBuild {
     public String getBuildName() {
         return finishedBuild.getFullName();
     }
+
+    public String getBuildId() {
+        return finishedBuild.getBuildTypeId();
+    }
 }

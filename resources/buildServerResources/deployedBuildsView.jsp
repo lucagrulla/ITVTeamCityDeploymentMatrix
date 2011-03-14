@@ -13,6 +13,9 @@
               <p class="build-name">${env.value.buildName}<p>
               <p class="build">Build: ${env.value.buildNumber}</p>
               <p class="finish-date">the deployed build is from:${env.value.finishDate}</p>
+             <!--  in progress
+              <a href="${teamcityPluginResourcesPath}/changeset.jsp?buildId=${env.value.buildId}&buildNumber=${env.value.buildNumber}">changeset</a>
+            -->
             </div>
          </c:forEach>
     </body>
