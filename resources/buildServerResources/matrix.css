@@ -10,6 +10,7 @@
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
     box-shadow: 10px 10px 20px #000;
+    padding-bottom:20px;
 }
 
 .env-description {
@@ -33,15 +34,12 @@
     font-size:20px;
 }
 
-.a {
-    text-align: center;
-}
-
-.changeset {
-    display:none;
-}
-
 .comment {
     font-weight: bold;
     font-style:italic;
+    font-size:15px;
+}
+
+.changeset {
+   text-align: center;
 }

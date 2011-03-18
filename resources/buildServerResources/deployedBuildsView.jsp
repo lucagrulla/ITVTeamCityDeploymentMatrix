@@ -18,9 +18,8 @@
               <p class="build">Build: ${env.value.buildNumber}</p>
               <p class="build-name">${env.value.buildName}<p>
               <p class="finish-date">build timestamp:${env.value.finishDate}</p>
-              <div class="changeset-block">
-                <a class="openmodalbox" href="changeset.html?buildId=${env.value.buildId}&buildNumber=${env.value.buildNumber}">changeset</a>
-              </div>
+              <div class="changeset">
+                  <a class="openmodalbox" href="changeset.html?buildId=${env.value.buildId}&buildNumber=${env.value.buildNumber}">build comments</a>
               </div>
             </div>
          </c:forEach>

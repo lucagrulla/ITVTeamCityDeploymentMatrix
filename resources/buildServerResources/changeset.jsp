@@ -3,11 +3,11 @@
 
 <html>
 
-          <h1>Changeset for build ${buildNumber}</h1>
+          <h2>Build #${buildNumber}</h1>
 
+          <ol>
          <c:forEach items="${data}" var="description" >
-            <div class="comment">
-                <p>${description}</p>
-            </div>
+               <li class="comment">${description}</li>
          </c:forEach>
+         </ol>
 </html>
