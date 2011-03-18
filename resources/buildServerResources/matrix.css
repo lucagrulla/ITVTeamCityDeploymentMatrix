@@ -30,8 +30,18 @@
 .build {
     text-align: center;
     font-weight: bold;
+    font-size:20px;
 }
 
 .a {
-    text-alifgn: center;
+    text-align: center;
+}
+
+.changeset {
+    display:none;
+}
+
+.comment {
+    font-weight: bold;
+    font-style:italic;
 }

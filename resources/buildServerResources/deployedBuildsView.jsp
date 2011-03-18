@@ -3,20 +3,28 @@
 
 <html>
     <head>
-       <link rel="stylesheet" href="${teamcityPluginResourcesPath}/matrix.css" type="text/css" media="all" /> 
+       <link rel="stylesheet" href="${teamcityPluginResourcesPath}matrix.css" type="text/css" media="all" />
+       <link rel="stylesheet" href="${teamcityPluginResourcesPath}fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+       <script type="text/javascript" src="${teamcityPluginResourcesPath}jquery-1.5.1.min.js"></script>
+       <script type="text/javascript" src="${teamcityPluginResourcesPath}fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+       <script type="text/javascript" src="${teamcityPluginResourcesPath}deploymentDashboard.js"></script>
     </head>
     <body>
-          
+
          <c:forEach items="${data}" var="env" >
              <div class="env">
               <p class="env-description">${env.key}<p>
-              <p class="build-name">${env.value.buildName}<p>
               <p class="build">Build: ${env.value.buildNumber}</p>
-              <p class="finish-date">the deployed build is from:${env.value.finishDate}</p>
-             <!--  in progress
-              <a href="${teamcityPluginResourcesPath}/changeset.jsp?buildId=${env.value.buildId}&buildNumber=${env.value.buildNumber}">changeset</a>
-            -->
+              <p class="build-name">${env.value.buildName}<p>
+              <p class="finish-date">build timestamp:${env.value.finishDate}</p>
+              <div class="changeset-block">
+                <a class="openmodalbox" href="changeset.html?buildId=${env.value.buildId}&buildNumber=${env.value.buildNumber}">changeset</a>
+              </div>
+              </div>
             </div>
          </c:forEach>
+
+         <div class="ddd"></div>
     </body>
 </html>

@@ -14,12 +14,12 @@ public class DeployedBuildsController extends BaseController {
 
     public DeployedBuildsController(SBuildServer server, WebControllerManager webManager) {
         super(server);
-        webManager.registerController("/deployedBuildProjects.html", this);
+        webManager.registerController("/environments.html", this);
     }
 
     @Override
     protected ModelAndView doHandle(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
-        HashMap<String, Object> model = new HashMap<String, Object>();
+        Map<String, Object> model = new HashMap<String, Object>();
         model.put("data", GetData());
 
         return new ModelAndView("/plugins/matrix/deployedBuildsView.jsp", model);

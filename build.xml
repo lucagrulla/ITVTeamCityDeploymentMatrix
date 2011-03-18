@@ -22,8 +22,7 @@
         <include name="**/?*.css"/>
         <include name="**/?*.html"/>
         <include name="**/?*.htm"/>
-        <include name="**/?*.ftl"/>
-        <include name="**/?*.ftl"/>
+        <include name="**/?*.js"/>
     </patternset>
 
     <path id="server.module.sourcepath">

@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.Set;
 
 public class ChangeSetController extends BaseController {
 
@@ -24,8 +23,9 @@ public class ChangeSetController extends BaseController {
         final String buildId = httpServletRequest.getParameter("buildId");
         final String buildNumber = httpServletRequest.getParameter("buildNumber");
 
-        final HashMap<String, Set> model = new HashMap<String, Set>();
+        final HashMap<String, Object> model = new HashMap<String, Object>();
         model.put("data", new ChangeSetService(myServer).getChangeSetFor(buildId, buildNumber));
+        model.put("buildNumber", buildNumber);
         return new ModelAndView("plugins/matrix/changeset.jsp", model);
     }
 }

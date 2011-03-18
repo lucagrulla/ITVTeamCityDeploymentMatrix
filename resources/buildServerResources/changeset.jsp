@@ -3,8 +3,10 @@
 
 <html>
 
+          <h1>Changeset for build ${buildNumber}</h1>
+
          <c:forEach items="${data}" var="description" >
-            <div>
+            <div class="comment">
                 <p>${description}</p>
             </div>
          </c:forEach>

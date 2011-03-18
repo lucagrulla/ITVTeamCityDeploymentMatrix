@@ -1,6 +1,8 @@
 package itv;
 
 import jetbrains.buildServer.serverSide.SFinishedBuild;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class SuccessfulBuild {
@@ -21,7 +23,8 @@ public class SuccessfulBuild {
     }
 
     public String getFinishDate() {
-        return finishedBuild.getFinishDate().toString();
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a dd/MM/yy");
+        return dateFormat.format(finishedBuild.getFinishDate());
     }
 
     public String getBuildName() {
